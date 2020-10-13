@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="foodViewModel"
+            type="com.android.example.projectmobile.FoodViewModel"/>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddFoodFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/editTextTextMultiLine2"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginEnd="10dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    android:textSize="26sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FoodName" />
+
+                <EditText
+                    android:id="@+id/FoodName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="50dp"
+                    android:ems="10"
+                    android:hint="Food name"
+                    android:inputType="textPersonName"
+                    android:textSize="30sp"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextTextMultiLine2"
+                    app:layout_constraintHorizontal_bias="0.129"
+                    app:layout_constraintStart_toStartOf="@+id/editTextTextMultiLine2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/editTextTextMultiLine3"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginEnd="10dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.509"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine2" />
+
+                <TextView
+                    android:id="@+id/Material"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:text="Material"
+                    app:layout_constraintEnd_toEndOf="@+id/FoodName"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/FoodName"
+                    app:layout_constraintTop_toBottomOf="@+id/FoodName" />
+
+                <TextView
+                    android:id="@+id/Recipe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:text="Recipe"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine3"
+                    app:layout_constraintEnd_toEndOf="@+id/Material"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/Material"
+                    app:layout_constraintTop_toBottomOf="@+id/Material" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:text="Save"
+                    android:onClick="@{()->foodViewModel.onContactAdd()}"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextTextMultiLine3"
+                    app:layout_constraintStart_toStartOf="@+id/editTextTextMultiLine3"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </FrameLayout>
+</layout>
